@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEEPSTONE • Boutique Minecraft</title>
+  <link rel="shortcut icon" href="deepstone-icon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="boutique.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="comment-rejoindre.html">comment nous rejoindre ?</a></li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="about.html">A propos de nous</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenu -->
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-8">🎮 Boutique des Grades Minecraft</h1>
+
+    <!-- Carte du grade VIP+ -->
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg max-w-md mx-auto">
+      <h2 class="text-2xl font-semibold mb-2 text-yellow-400">⭐ VIP+</h2>
+      <ul class="mb-4">
+        <li>✔ Accès au /kit vip</li>
+        <li>✔ Préfixe coloré dans le chat</li>
+        <li>✔ Accès au /fly</li>
+      </ul>
+      <p class="text-xl font-bold mb-4">25,99 €</p>
+
+      <!-- Formulaire PayPal -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="flex flex-col gap-3">
+        <!-- Type de commande -->
+        <input type="hidden" name="cmd" value="_xclick">
+        <!-- Adresse e-mail PayPal du vendeur -->
+        <input type="hidden" name="business" value="ton-email-paypal@gmail.com">
+        <!-- Nom de l'article -->
+        <input type="hidden" name="item_name" value="Grade VIP+ - Serveur Deepstone">
+        <!-- Montant -->
+        <input type="hidden" name="amount" value="25.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <!-- IPN (vers le script PHP) -->
+        <input type="hidden" name="notify_url" value="https://minecraft-farms.ddns.net:5501/pages/deepstone/ipn_discord.php">
+
+        <!-- Champ pseudo -->
+        <label for="pseudo" class="text-sm">🎮 Ton pseudo Minecraft :</label>
+        <input type="text" name="custom" id="pseudo" required placeholder="Ex: Notch" class="text-black px-2 py-1 rounded">
+
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold">
+          Acheter via PayPal
+        </button>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>
